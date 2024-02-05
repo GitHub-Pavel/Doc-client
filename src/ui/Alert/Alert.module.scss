@@ -1,0 +1,23 @@
+.alert {
+  border-left-width: 3px;
+  border-left-style: solid;
+  padding: 8px 10px;
+}
+
+.error {
+  border-left-color: $alizarin;
+  color: $alizarin;
+  background-color: mix($alizarin, transparent, 20%);
+}
+
+.success {
+  border-left-color: $emerald;
+  background-color: mix($emerald, transparent, 20%);
+  color: $emerald;
+}
+
+.info {
+  border-left-color: $peter-river;
+  background-color: mix($peter-river, transparent, 20%);
+  color: $peter-river;
+}

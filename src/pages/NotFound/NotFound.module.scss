@@ -1,0 +1,22 @@
+.view {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.wrap {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: $black;
+}
+
+.heading {
+  margin-bottom: 35px;
+}
+
+.error {
+  font-weight: 900;
+  font-size: 248px;
+  margin-bottom: -80px;
+}

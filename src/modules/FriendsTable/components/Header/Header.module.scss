@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  @media (max-width: $screen-xs-min) {
+    flex-direction: column-reverse;
+  }
+}
+
+.links {
+  padding-left: 29px;
+  display: flex;
+  align-items: center;
+  gap: 29px;
+
+  & :global(.fui-trash) {
+    font-size: 20px;
+  }
+
+  @media (max-width: $screen-md-max) {
+    padding-left: 0;
+    gap: 15px;
+  }
+
+  @media (max-width: $screen-xs-min) {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+}
+
+.createBtn {
+  @media (max-width: $screen-xs-min) {
+    width: 100%;
+
+    a {
+      width: 100%;
+    }
+  }
+}

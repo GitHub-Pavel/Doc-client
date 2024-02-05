@@ -1,0 +1,78 @@
+.table {
+  min-width: 480px;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  color: $gray;
+
+  thead {
+    text-align: left;
+
+    th {
+      background-color: $black;
+      padding: 14px 0 13px;
+      line-height: 36px;
+      color: $dark;
+    }
+
+    th:first-child {
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+      width: 92px;
+
+      @media (max-width: $screen-xs-max) {
+        width: 120px;
+      }
+    }
+
+    th:last-child {
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+      width: 190px;
+    }
+
+    th:nth-child(2),
+    th:nth-child(3) {
+      width: 140px;
+    }
+
+    th:nth-child(4) {
+      width: 450px;
+
+      @media (max-width: $screen-md-max) {
+        width: 310px;
+      }
+
+      @media (max-width: $screen-xs-max) {
+        width: 190px;
+      }
+    }
+  }
+
+  tbody {
+    padding-top: 10px;
+
+    td {
+      background-color: $black-light;
+      padding: 14px 0 13px;
+      font-size: 16px;
+      color: $gray;
+    }
+
+    td:first-child {
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+      text-align: center;
+    }
+
+    td:last-child {
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+  }
+}
+
+.checkboxWrap {
+  display: flex;
+  justify-content: center;
+}

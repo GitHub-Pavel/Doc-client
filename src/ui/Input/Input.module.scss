@@ -1,0 +1,104 @@
+@import './Input.mixins.scss';
+
+.field {
+  border: 2px solid $black;
+  font-family: $font-family-base;
+  line-height: inherit;
+  font-size: inherit;
+  padding: 8px 12px;
+  height: 42px;
+  color: $gray;
+  border-radius: $input-border-radius;
+  box-shadow: none;
+  background: $input-bg;
+  width: 100%;
+  transition: border 0.25s linear, color 0.25s linear,
+    background-color 0.25s linear;
+
+  @include field-focus();
+  @include placeholder($gray);
+
+  &[disabled] {
+    background-color: $input-bg-disabled;
+    border-color: mix($gray, white, 40%);
+    color: mix($gray, white, 40%);
+    @include opacity(0.7);
+  }
+
+  &[disabled],
+  &[readonly] {
+    cursor: default;
+  }
+
+  // Flat (without border)
+  &.flat {
+    border-color: transparent;
+
+    &:hover {
+      border-color: $gray-light;
+    }
+    &:focus {
+      border-color: $brand-secondary;
+    }
+  }
+}
+
+.sm {
+  @include input-size(
+    $input-height-sm,
+    6px,
+    10px,
+    $input-font-size-sm,
+    $input-line-height-sm
+  );
+}
+
+.lg {
+  @include input-size(
+    $input-height-lg,
+    10px,
+    15px,
+    $input-font-size-lg,
+    $input-line-height-lg
+  );
+}
+
+.hg {
+  @include input-size(
+    $input-height-hg,
+    10px,
+    16px,
+    $input-font-size-hg,
+    $input-line-height-hg
+  );
+}
+
+.success {
+  @include field-validation($brand-success, $brand-success);
+}
+.warning {
+  @include field-validation($brand-warning, $brand-warning);
+}
+.error {
+  @include field-validation($brand-danger, $brand-danger);
+}
+
+.label {
+  position: relative;
+  line-height: $input-line-height-base;
+  font-size: $input-font-size-base;
+}
+
+.icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: $gray;
+  transition: color 0.25s linear;
+  pointer-events: none;
+
+  &:global(.fui-user) {
+    padding-bottom: 3px;
+  }
+}

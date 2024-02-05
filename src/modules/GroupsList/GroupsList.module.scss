@@ -1,0 +1,109 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+
+  &Checkbox {
+    background-color: $black;
+    padding: 13px;
+    border-radius: 4px;
+    transition: background-color 0.2s linear;
+
+    &:global(.checkbox-hover):not(:global(.nohover)):hover {
+      background-color: mix($black, transparent, 75%);
+    }
+
+    &:global(.checkbox-hover):not(:global(.nohover)):active {
+      background-color: mix($black, transparent, 60%);
+      transition: background-color 0s linear;
+    }
+  }
+
+  @media (max-width: $screen-xs-min) {
+    flex-direction: column-reverse;
+
+    .createBtn {
+      width: 100%;
+
+      a {
+        width: 100%;
+      }
+    }
+
+    .links {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  & :global(.fui-trash) {
+    font-size: 20px;
+  }
+}
+
+.card {
+  padding: 15px;
+  padding-bottom: 20px;
+  background-color: $black;
+  border-radius: 5px;
+  position: relative;
+  transition: background-color 0.2s linear;
+
+  &:global(.checkbox-hover):not(:global(.nohover)):hover {
+    background-color: mix($black, transparent, 75%);
+  }
+
+  &:global(.checkbox-hover):not(:global(.nohover)):active {
+    background-color: mix($black, transparent, 60%);
+    transition: background-color 0s linear;
+  }
+
+  &Title {
+    color: $clouds;
+    font-weight: 600;
+    display: inline-block;
+
+    &::before {
+      content: '--';
+      margin-right: 10px;
+      letter-spacing: -4px;
+      font-size: 24px;
+      line-height: 16px;
+    }
+  }
+
+  &Desc {
+    font-size: 14px;
+    color: $gray;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-top: 10px;
+  }
+
+  &Checkbox {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+  }
+
+  &Btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+  }
+}
+
+.section {
+  padding-bottom: 20px;
+}

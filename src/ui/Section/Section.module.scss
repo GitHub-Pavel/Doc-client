@@ -1,0 +1,12 @@
+.screen {
+  height: 100vh;
+  position: relative;
+
+  &.noHeader {
+    height: calc(100vh - $header-height);
+  }
+}
+
+.noHeader {
+  margin-top: $header-height;
+}

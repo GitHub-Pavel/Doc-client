@@ -1,0 +1,50 @@
+@mixin field-validation(
+  $text-color: $brand-primary,
+  $border-color: $gray-light,
+  $background-color: $inverse
+) {
+  color: $text-color;
+  border-color: $border-color;
+  box-shadow: none;
+  @include placeholder($text-color);
+
+  &:focus {
+    border-color: $border-color;
+    box-shadow: none;
+
+    & + .icon {
+      color: $text-color;
+    }
+  }
+
+  & + .icon {
+    color: $text-color;
+  }
+}
+
+@mixin field-focus($color: $brand-secondary) {
+  &:focus {
+    border-color: $color;
+    outline: 0;
+    box-shadow: none;
+
+    & + .icon {
+      color: $color;
+    }
+  }
+}
+
+@mixin input-size(
+  $input-height,
+  $padding-vertical,
+  $padding-horizontal,
+  $font-size,
+  $line-height,
+  $border-radius: $border-radius-large
+) {
+  height: $input-height;
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $font-size;
+  line-height: $line-height;
+  border-radius: $border-radius;
+}

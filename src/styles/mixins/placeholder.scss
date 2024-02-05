@@ -1,0 +1,14 @@
+@mixin placeholder($color: $input-color-placeholder) {
+  &::-moz-placeholder {
+    color: $color; // Firefox
+    opacity: 0.6;
+  } // See https://github.com/twbs/bootstrap/pull/11526
+  &:-ms-input-placeholder {
+    color: $color;
+    opacity: 0.6;
+  } // Internet Explorer 10+
+  &::-webkit-input-placeholder {
+    color: $color;
+    opacity: 0.6;
+  } // Safari and Chrome
+}

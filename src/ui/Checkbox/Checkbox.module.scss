@@ -1,0 +1,175 @@
+.checkbox {
+  display: block;
+  padding-left: 20px;
+  position: relative;
+  transition: color 0.25s linear;
+  font-size: ceil(($component-font-size-base * 0.933));
+  min-height: 20px;
+  line-height: 1.5;
+  cursor: pointer;
+
+  &.disabled {
+    cursor: default;
+  }
+
+  &.hasContent {
+    padding-left: 32px;
+  }
+
+  .iconChecked:before {
+    content: '\e60e';
+  }
+  .iconUnchecked:before {
+    content: '\e60d';
+  }
+
+  .iconChecked,
+  .iconUnchecked {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+    margin: 0;
+    opacity: 1;
+    filter: none;
+
+    &:before {
+      font-family: 'Flat-UI-Pro-Icons';
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+
+  .icons {
+    color: $dark;
+    display: block;
+    height: 20px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.25s linear;
+
+    .iconChecked {
+      @include opacity(0);
+    }
+  }
+
+  &:hover:not(.nohover) .icons,
+  :global(.checkbox-hover):not(:global(.nohover)):hover & .icons {
+    transition: color 0.25s linear;
+
+    .iconUnchecked {
+      @include opacity(0);
+    }
+    .iconChecked {
+      opacity: 1;
+      filter: none;
+    }
+  }
+
+  input[type='checkbox'].input {
+    outline: none !important;
+    opacity: 0;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+
+    &:checked + .icons {
+      color: $brand-secondary;
+
+      .iconUnchecked {
+        @include opacity(0);
+      }
+      .iconChecked {
+        opacity: 1;
+        filter: none;
+        color: $brand-secondary;
+        transition: color 0.25s linear;
+      }
+    }
+
+    &:disabled + .icons {
+      cursor: default;
+      color: mix($dark, transparent, 38%);
+
+      .icons {
+        color: mix($dark, transparent, 38%);
+      }
+      .iconUnchecked {
+        opacity: 1;
+        filter: none;
+      }
+      .iconChecked {
+        @include opacity(0);
+      }
+    }
+
+    &:disabled:checked + .icons {
+      .icons {
+        color: mix($dark, white, 38%);
+      }
+      .iconUnchecked {
+        @include opacity(0);
+      }
+      .iconChecked {
+        opacity: 1;
+        filter: none;
+        color: mix($dark, white, 38%);
+      }
+    }
+
+    &:indeterminate + .icons {
+      color: $dark;
+
+      .iconUnchecked {
+        opacity: 1;
+        filter: none;
+      }
+      .iconChecked {
+        @include opacity(0);
+      }
+      &:before {
+        content: '\2013';
+        position: absolute;
+        top: 0;
+        left: 0;
+        line-height: 20px;
+        width: 20px;
+        text-align: center;
+        color: $inverse;
+        font-size: 22px;
+        z-index: 10;
+      }
+    }
+
+    &:focus + .icons {
+      outline: 1px dotted $dark;
+      outline-offset: 1px;
+    }
+  }
+}
+
+.content {
+  color: $gray;
+}
+
+:global(.checkbox-hover) {
+  &:not(:global(.nohover)):hover {
+    cursor: pointer;
+  }
+}

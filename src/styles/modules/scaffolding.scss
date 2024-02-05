@@ -1,0 +1,60 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none !important;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-color;
+  background-color: $body-bg;
+  overflow-x: hidden;
+
+  @include scrollbar(8px, $brand-secondary, #0a0a0a);
+}
+
+a,
+.link {
+  color: $link-color;
+  text-decoration: none;
+  transition: 0.25s;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  &.disabled,
+  &:disabled {
+    cursor: default;
+    opacity: 0.7;
+  }
+
+  &:not(.disabled):not(:disabled):hover,
+  &:not(.disabled):not(:disabled):focus {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+  &:not(.disabled):not(:disabled):focus {
+    outline: none;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: inline-block;
+}
+
+.hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  opacity: 0;
+  white-space: nowrap;
+}

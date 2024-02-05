@@ -1,0 +1,16 @@
+export { AuthConfirm } from './AuthConfirm/AuthConfirm';
+export { AuthReset } from './AuthReset/AuthReset';
+export { CreateFriend } from './CreateFriend/CreateFriend';
+export { CreateGroup } from './CreateGroup/CreateGroup';
+export { EditFriend } from './EditFriend/EditFriend';
+export { Error500 } from './Error500/Error500';
+export { Friends } from './Friends/Friends';
+export { Groups } from './Groups/Groups';
+export { HomeLogged } from './Home/HomeLogged';
+export { HomeLogout } from './Home/HomeLogout';
+export { NotActivated } from './NotActivated/NotActivated';
+export { NotFound } from './NotFound/NotFound';
+export { Places } from './Places/Places';
+export { Profile } from './Profile/Profile';
+export { SignUp } from './SignUp/SignUp';
+export { Users } from './Users/Users';
